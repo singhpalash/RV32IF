@@ -6,7 +6,7 @@ The processor is implemented entirely in Verilog, structured in a modular and sy
 Note: Tomasulo’s algorithm for floating-point instruction scheduling is under development and will be integrated soon.
 
 # Key Features
- # 1) 5-stage pipeline architecture:
+ # 1) 5-stage pipeline architecture: 
 
   - Instruction Fetch (IF)
 
