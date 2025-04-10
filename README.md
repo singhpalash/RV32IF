@@ -6,48 +6,69 @@ The processor is implemented entirely in Verilog, structured in a modular and sy
 Note: Tomasulo’s algorithm for floating-point instruction scheduling is under development and will be integrated soon.
 
 # Key Features
-- 5-stage pipeline architecture:
+ # 1) 5-stage pipeline architecture:
 
-- Instruction Fetch (IF)
+  - Instruction Fetch (IF)
 
-- Instruction Decode (ID)
+  - Instruction Decode (ID)
 
-- Execute (EX)
+  - Execute (EX)
 
-- Memory Access (MEM)
+  - Memory Access (MEM)
 
-- Write Back (WB)
+  - Write Back (WB)
 
-- RV32I instruction support:
+ # 2) RV32I instruction support:
 
-- Arithmetic and logic instructions
+  - Arithmetic and logic instructions
 
-- Load/store operations
+  - Load/store operations
 
-- Branches, jumps, and immediate variants
+  - Branches, jumps, and immediate variants
 
-- Basic RV32F support (in progress):
+  - Basic RV32F support (in progress):
 
-- Pipelined floating-point ALU for Add/Sub, Multiply, Div/Sqrt in floating point
+  - All instructions of base class supported except byte level load,store and system calls
 
-- Separate register files for integer and floating-point units
+ # 3) Pipelined floating-point ALU for Add/Sub, Multiply, Div/Sqrt in floating point
 
-- Integration with Tomasulo’s algorithm is ongoing
+ # 4) Separate register files for integer and floating-point units
 
-- Hazard handling:
+ # 5) Integration with Tomasulo’s algorithm is ongoing
 
-- Basic data forwarding and hazard detection implemented for RV32I
+ # 6) Hazard handling:
 
-- Floating-point hazard handling will be handled via Tomasulo’s mechanism
+  - Basic data forwarding and hazard detection implemented for RV32I
 
-- Memory modules:
+  - Floating-point hazard handling will be handled via Tomasulo’s mechanism
 
-- Instruction and data memory implemented in Verilog
+ # 7) Memory modules:
 
-- FPGA-ready:
+  - Instruction and data memory implemented in Verilog
 
-- Synthesizable design, compatible with FPGA platforms like ZedBoard, Spartan-3, or Virtex-7
+ # 8) FPGA-ready:
 
+  - Synthesizable design, compatible with FPGA platforms like ZedBoard, Spartan-3, or Virtex-7
+
+# Tools & Technologies
+
+- Language: Verilog HDL
+
+- Simulation: Vivado Simulator
+
+- Synthesis: Xilinx Vivado
+
+- Target FPGAs: ZedBoard, Spartan-3, Virtex-7
+
+# Work in Progress
+
+ - Tomasulo’s algorithm for dynamic scheduling of RV32F instructions
+
+ - Scoreboarding and reservation stations for FP execution
+
+ - Stall and replay handling for out-of-order floating-point instructions
+
+ - Formal verification using assertion-based testbenches
 
 
 
