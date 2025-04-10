@@ -63,6 +63,11 @@ Note: Tomasulo’s algorithm for floating-point instruction scheduling is under 
 
   - Synthesizable design, compatible with FPGA platforms like ZedBoard, Spartan-3, or Virtex-7
 
+# RTL
+
+<img width="953" alt="image" src="https://github.com/user-attachments/assets/bb6f4261-eb87-46a6-99e7-df7975f8a550" />
+
+
 # Tools & Technologies
 
 - Language: Verilog HDL
