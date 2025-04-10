@@ -32,9 +32,22 @@ Note: Tomasulo’s algorithm for floating-point instruction scheduling is under 
 
  # 3) Pipelined floating-point ALU for Add/Sub, Multiply, Div/Sqrt in floating point
 
+  - Each operation (FADD.S, FSUB.S, FMUL.S, FDIV.S, FSQRT.S) is implemented in separate pipelined units to allow parallelism and reduce execution latency.
+
+  - FP ALUs are designed to support multi-cycle operations using stage-wise handshaking, ensuring proper sequencing and pipeline flushing when needed.
+
  # 4) Separate register files for integer and floating-point units
+ 
+  - The processor uses dedicated register files for x0–x31 (integer) and f0–f31 (floating-point) as per RISC-V conventions, allowing parallel access without contention.
+
+  - Each register file is dual-port, enabling simultaneous read/write operations essential for pipelined execution.
 
  # 5) Integration with Tomasulo’s algorithm is ongoing
+
+ -  Design includes reservation stations, common data bus (CDB), and reorder buffer (ROB) to support out-of-order execution of floating-point instructions.
+
+ - Tomasulo’s integration aims to eliminate structural and WAW/RAW hazards in floating-point pipelines, allowing dynamic scheduling and latency hiding for long-latency 
+   operations like division/sqrt.
 
  # 6) Hazard handling:
 
